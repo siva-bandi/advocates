@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advocates</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <body>
+  	<% if advocate_signed_in? %>
+	  <li>
+	  <%= link_to('Logout', destroy_advocate_session_path, method: :delete) %>        
+	  </li>
+	<% else %>
+	  <li>
+	  <%= link_to('Login', new_advocate_session_path) %>  
+	  </li>
+	<% end %>
+
+	<% if advocate_signed_in? %>
+	  <li>
+	  <%= link_to('Edit registration', edit_advocate_registration_path) %>
+	  </li>
+	<% else %>
+	  <li>
+	  <%= link_to('Register', new_advocate_registration_path) %>
+	  </li>
+	<% end %>
+
+    <%= yield %>
+  </body>
+</html>

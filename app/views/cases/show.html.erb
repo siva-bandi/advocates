@@ -1,0 +1,29 @@
+<p>
+  <strong>advocate_id:</strong>
+  <%= @case.advocate_id %>
+</p>
+
+<p>
+  <strong>client:</strong>
+  <%= @case.client_name %>
+</p>
+
+<p>
+  <strong>state:</strong>
+  <%= @case.state.name %>
+</p>
+
+<p>
+  <strong>status:</strong>
+  <%= @case.status %>
+</p>
+
+<p>
+  <strong>date:</strong>
+  <%= @case.date %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_case_path(@case) %> |
+<%= link_to 'Back', cases_path %>

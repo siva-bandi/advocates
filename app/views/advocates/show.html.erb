@@ -1,0 +1,15 @@
+<p>
+  <strong>name:</strong>
+  <%= @advocate.name %>
+</p>
+
+<p>
+  <strong>states:</strong>
+
+  <% @advocate.states.each do |state| %>
+  	<p><%= state.name %></p>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_advocate_path(@advocate) %> |
+<%= link_to 'Back', advocates_path %>

@@ -1,0 +1,20 @@
+<h1>Advocate</h1>
+ 
+<table>
+    <th>name</th>
+  </tr>
+ 
+  <% @advocate.each do |advocate| %>
+    <tr>
+      <td><%= advocate.name %></td>
+      <td><%= link_to 'Show', advocate_path(advocate) %></td>
+      <td><%= link_to 'Edit', advocate_path(advocate) %></td>
+      <td><%= link_to 'Destroy', advocate_path(advocate),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Back', advocates_path %>

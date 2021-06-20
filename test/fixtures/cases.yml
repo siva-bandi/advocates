@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  advocate_id: 1
+  state_id: 1
+  client_name: MyString
+  status: false
+  date: MyString
+
+two:
+  advocate_id: 1
+  state_id: 1
+  client_name: MyString
+  status: false
+  date: MyString

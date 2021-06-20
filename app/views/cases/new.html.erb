@@ -1,0 +1,29 @@
+<h1>New Cases</h1>
+<%= form_with scope: :case, url: cases_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :client_name %><br>
+    <%= form.text_field :client_name %>
+  </p>
+
+  <p>
+    <%= form.label :state_id %><br>
+    <%= form.select :state_id, State.all.collect {|p| [ p.name, p.id ] } %>
+  </p>
+
+ <p>
+    <%= form.label :status%><br>
+	<%= form.select :status, ['Accept','Reject'] %>
+</p>	
+
+  <p>
+    <%= form.label :date %><br>
+    <%= form.date_field :date %>
+  </p>
+
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<%end%>

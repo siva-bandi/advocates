@@ -1,0 +1,22 @@
+<h1>Listing States</h1>
+ 
+<table>
+    <th>States</th>
+  </tr>
+ 
+  <% @state.each do |state| %>
+    <tr>
+      <td><%= state.name %></td>
+      <td><%= link_to 'Show', state_path(state) %></td>
+      <td><%= link_to 'Edit', state_path(state) %></td>
+      <td><%= link_to 'Destroy', state_path(state),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      
+    </tr>
+  <% end %>
+</table>
+
+
+<%= link_to " Add State", new_state_path %>
+<%= link_to 'Back', states_path %>

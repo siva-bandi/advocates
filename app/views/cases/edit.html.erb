@@ -1,0 +1,50 @@
+<h1>Edit Case</h1>
+ 
+<%= form_with(model: @case, local: true) do |form| %>
+ 
+  <% if @case.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@case.errors.count, "error") %> prohibited
+        this case from being saved:
+      </h2>
+      <ul>
+        <% @case.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= form.label :advocate_id %><br>
+    <%= form.text_field :advocate_id %>
+  </p>
+
+  <p>
+    <%= form.label :client_name %><br>
+    <%= form.text_field :client_name%>
+  </p>
+
+  <p>
+    <%= form.label :state_id %><br>
+    <%= form.text_field :state_id %>
+  </p>
+
+  <p>
+    <%= form.label :status %><br>
+    <%= form.text_field :status %>
+  </p>
+ 
+  <p>
+    <%= form.label :date %><br>
+    <%= form.text_field :date %>
+  </p>
+
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>

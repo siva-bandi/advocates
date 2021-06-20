@@ -1,0 +1,29 @@
+<h1>Listing Cases</h1>
+ 
+<table>
+    <th>client_name</th>
+    <th>state</th>
+    <th>status</th>
+    <th>date</th> 
+  </tr>
+ 
+  <% @case.each do |advocate_case| %>
+    <tr>
+     
+      <td><%= advocate_case.client_name %></td>
+      <td><%= advocate_case.state.name %></td>
+      <td><%= advocate_case.status %></td>
+      <td><%= advocate_case.date %></td>
+      <td><%= link_to 'Show', case_path(advocate_case) %></td>
+      <td><%= link_to 'Edit', case_path(advocate_case) %></td>
+      <td><%= link_to 'Destroy', case_path(advocate_case),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      
+    </tr>
+  <% end %>
+</table>
+
+
+<%= link_to "New Case", new_case_path %>
+<%= link_to 'Back', cases_path %>
